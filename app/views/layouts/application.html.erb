@@ -1,14 +1,25 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>AngularRails</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+	<head>
+	  <title>AngularRails</title>
+	  <%= stylesheet_link_tag    'application', media: 'all' %>
+	  <%= csrf_meta_tags %>
+	</head>
+	<body ng-app="angularRails">
+		<layout-navbar-header></layout-navbar-header>
+		<div id="wrapper">
+      <layout-sidebar></layout-sidebar>
 
-<%= yield %>
+      <!-- Page Content -->
+      <div id="page-content-wrapper">
+        <div class="container-fluid">
+        	<layout-breadcrumb></layout-breadcrumb>
+					<%= yield %>
+        </div>
+      </div><!-- /#page-content-wrapper -->
+    </div><!-- /#wrapper -->
 
-</body>
+		<!-- load js at the bottom of page to load webpage faster -->
+	  <%= javascript_include_tag 'application' %>
+	</body>
 </html>

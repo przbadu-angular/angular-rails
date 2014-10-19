@@ -52,3 +52,11 @@ gem 'bower-rails'
 
 # manage angular template easily
 gem 'angular-rails-templates'
+
+# assets management gem for deploying to heroku server
+gem "foreman"
+group :production, :staging do
+  gem "rails_12factor"
+  gem "rails_stdout_logging"
+  gem "rails_serve_static_assets"
+end

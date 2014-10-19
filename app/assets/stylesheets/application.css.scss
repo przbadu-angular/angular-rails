@@ -1,0 +1,199 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+// declare some common variables that we can re-use
+$primary-color: 						#2b3d51;
+$dark-primary:              #142638;
+$light-primary:							#54677a;
+$secondary-color: 					#243140;
+$white-color: 							#FFFFFF;
+$cream-color: 							#F0F0F0;
+$ash-color: 								#CCCCCC;
+$dark-ash-color: 						#999999;
+$lightsteelblue: 						#B0C4DE ;
+
+$link-primary-color: 				$white-color;
+$link-secondary-color: 			$dark-ash-color;
+
+$sidebar-width:             220px;
+
+$navbar-default-bg: $primary-color;
+$navbar-default-brand-color: $white-color;
+$navbar-default-color: $white-color;
+$navbar-default-link-color: $white-color;
+$navbar-default-link-hover-bg: $secondary-color;
+$navbar-default-link-hover-color: $cream-color;
+// $navbar-default-link-active-color: ;
+// $navbar-default-link-active-bg: ;
+
+@import "bootstrap-sass-official/assets/stylesheets/bootstrap-sprockets";
+@import "bootstrap-sass-official/assets/stylesheets/bootstrap";
+
+
+
+body { 
+	padding-top: 50px; 
+}
+
+
+#wrapper {
+  padding-left: 0;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+#wrapper.toggled {
+  padding-left: $sidebar-width;
+}
+
+#sidebar-wrapper {
+  z-index: 1000;
+  position: fixed;
+  left: $sidebar-width;
+  width: 0;
+  height: 100%;
+  margin-left: -$sidebar-width;
+  overflow-y: auto;
+  background: $primary-color;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+  width: $sidebar-width;
+}
+
+#page-content-wrapper {
+  width: 100%;
+  padding: 15px;
+}
+
+#wrapper.toggled #page-content-wrapper {
+  position: absolute;
+  margin-right: -250px;
+}
+/* Sidebar Styles */
+
+.sidebar-nav {
+  position: absolute;
+  top: 0;
+  width: 217px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sidebar-nav li {
+  text-indent: 20px;
+  line-height: 40px;
+  border-bottom: 1px solid $dark-primary;
+  border-top: 1px solid $light-primary;
+}
+
+.sidebar-nav li a {
+  display: block;
+  text-decoration: none;
+  color: $link-primary-color;
+}
+
+.sidebar-nav li a:hover {
+  text-decoration: none;
+  color: $link-secondary-color;
+  background: $secondary-color;
+}
+
+.sidebar-nav li a:active,
+.sidebar-nav li a:focus {
+  text-decoration: none;
+}
+
+.sidebar-nav > .sidebar-brand {
+  height: 65px;
+  font-size: 18px;
+  line-height: 60px;
+}
+
+.sidebar-nav > .sidebar-brand a {
+  color: $link-primary-color;
+}
+
+.sidebar-nav > .sidebar-brand a:hover {
+  color: #fff;
+  background: none;
+}
+
+.sidebar-nav li a span.caret{
+  margin-left: 110px;
+}
+
+
+.sidebar-nav li.side-user {
+  border-bottom: 1px solid #142638;
+  border-top: medium none !important;
+  text-indent: 0px;
+  text-align: center;
+  display: block;
+  padding: 15px;
+  max-width: 150px;
+}
+.sidebar-nav .side-user img{
+  max-width: 80px;
+}
+.sidebar-nav .side-user .welcome {
+  text-align: center;
+  color: #9aa4af;
+  font-style: italic;
+  margin: 0;
+}
+.sidebar-nav .side-user .name {
+  color: #ccd1d7;
+  font-family: "Ubuntu","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+  margin: 0;
+}
+
+@media(min-width:768px) {
+  #wrapper {
+    padding-left: $sidebar-width;
+  }
+
+  #wrapper.toggled {
+    padding-left: 0;
+  }
+
+  #sidebar-wrapper {
+    width: $sidebar-width;
+  }
+
+  #wrapper.toggled #sidebar-wrapper {
+    width: 0;
+  }
+
+  #page-content-wrapper {
+    padding: 20px;
+  }
+
+  #wrapper.toggled #page-content-wrapper {
+    position: relative;
+    margin-right: 0;
+  }
+}
+

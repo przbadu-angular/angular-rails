@@ -1,0 +1,1 @@
+angular.module("angularRails", ['layouts.directives'])

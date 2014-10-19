@@ -12,5 +12,17 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
+//= require bootstrap-sass-official/assets/javascripts/bootstrap-sprockets
+//= require bootstrap-sass-official/assets/javascripts/bootstrap
+//= require angular/angular
+//= require_tree ./ng-app
+//= require angular-rails-templates
+//= require_tree ../templates
 //= require_tree .
+
+
+// toggle sidebar
+$("#menu-toggle").click(function(e) {
+    e.preventDefault();
+    $("#wrapper").toggleClass("toggled");
+});
