@@ -10,7 +10,8 @@ node do |product|
 		:created_at_formatter => product.created_at.strftime("%m/%d/%Y"),
 		:last_updated_at 			=> time_ago_in_words(product.updated_at),
 		:index_url 						=> api_products_url,
-		:edit_url							=> edit_api_product_url(product),		
+		:edit_url							=> edit_api_product_url(product),
+		:image_url 						=> ActionController::Base.helpers.asset_path("6.jpg")
 	}
 end
 
