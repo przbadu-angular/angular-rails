@@ -12,10 +12,24 @@ node do |product|
 end
 
 
-child :review do
-	attributes :id, :product_id :title, :review, :name, :created_at, :updated_at
+child :reviews do
+	attributes :id, :product_id, :title, :review, :name, :created_at, :updated_at
+
+	node do |review|
+		{
+			:created_at_formatter => review.created_at.strftime("%m/%d/%Y"),
+			:last_updated_at 			=> time_ago_in_words(review.updated_at)
+		}
+	end
 end
 
-child :star do
+child :stars do
 	attributes :id, :product_id, :rating, :created_at, :updated_at
+
+	node do |star|
+		{
+			:created_at_formatter => star.created_at.strftime("%m/%d/%Y"),
+			:last_updated_at 			=> time_ago_in_words(star.updated_at)
+		}
+	end
 end
