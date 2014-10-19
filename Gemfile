@@ -60,3 +60,11 @@ group :production, :staging do
   gem "rails_stdout_logging"
   gem "rails_serve_static_assets"
 end
+
+
+# use pry-rails for better rails console
+gem 'pry-rails'
+
+# use rabl and oj for json template solution
+gem 'rabl'
+gem 'oj'
