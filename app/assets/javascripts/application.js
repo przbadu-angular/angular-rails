@@ -12,8 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require bootstrap-sass-official/assets/javascripts/bootstrap-sprockets
-//= require bootstrap-sass-official/assets/javascripts/bootstrap
+// require bootstrap-sass-official/assets/javascripts/bootstrap-sprockets
+// require bootstrap-sass-official/assets/javascripts/bootstrap
 //= require angular/angular
 //= require angular-route/angular-route
 //= require angular-rails-templates

@@ -7,7 +7,9 @@ attributes :id, :name, :market_price, :selling_price, :you_save, :percentage_off
 node do |product|
 	{
 		:created_at_formatter => product.created_at.strftime("%m/%d/%Y"),
-		:last_updated_at 			=> time_ago_in_words(product.updated_at)
+		:last_updated_at 			=> time_ago_in_words(product.updated_at),
+		:index_url 						=> api_products_url,
+		:edit_url							=> edit_api_product_url(product),		
 	}
 end
 

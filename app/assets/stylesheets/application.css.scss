@@ -197,3 +197,73 @@ body {
   }
 }
 
+
+// product listing
+.product-listing{
+  color: #999;
+  border: 1px solid $ash-color;
+  text-align: center;
+  padding-bottom: 5px;
+}
+.product-listing img {
+    height: auto;
+    max-width: 100%;
+}
+.strike-center {
+    position: relative;
+    white-space: nowrap; /* would center line-through in the middle of the wrapped lines */
+}
+.strike-center:after {
+    border-top: 1px solid #000;
+    position: absolute;
+    content: "";
+    right: 0;
+    top:50%;
+    left: 0;
+}
+.product-listing .row{
+  margin-top: 5px;
+}
+.product-listing .title{
+  font-weight: bold;
+  text-transform: capitalize;
+}
+.product-listing .selling-price{
+  font-size: 14px;
+  color: #000;
+  font-weight: bold;
+}
+.product-listing .bordered-bottom{
+  border-bottom: 2px solid $ash-color;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+}
+
+
+
+
+// Percentage based rating
+// Method 1) Pure CSS
+.star-ratings-css {
+  unicode-bidi: bidi-override;
+  color: #c5c5c5;
+  font-size: 25px;
+  height: 25px;
+  width: 100px;
+  margin: 0 auto;
+  position: relative;
+  padding: 0;
+  text-shadow: 0px 1px 0 #a2a2a2;
+  
+  .star-ratings-css-top {
+    color: #e7711b;
+    padding: 0;
+    text-shadow: 0px 1px 0 #ab5414;
+    position: absolute;
+    z-index: 1;
+    display:block;
+    left: 0px;
+    overflow: hidden;
+  }
+  .star-ratings-css-bottom { z-index: 0; }
+}

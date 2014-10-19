@@ -1,39 +1,49 @@
-<header class="row">
-  <h1 class="text-center col-md-6 col-md-offset-3">Find Recipes</h1>
-</header>
-<section class="row">
-  <form>
-    <div class="form-group col-md-6 col-md-offset-3">
-      <label for="keywords" class="sr-only">Keywords</label>
-      <input type="text" autofocus class="form-control" placeholder="Recipe name, e.g. Baked Potato">
+
+<div class="row">
+  <div class="col-sm-12">
+    <h2>Product Listing (original product image comming soon!)</h2>
+  </div>
+</div>
+
+<hr />
+
+<div class="row">
+  <div class="col-lg-3 col-md-4 col-sm-6 product-listing">
+    <a href="#">
+      <img src="/assets/6.jpg">
+    </a>
+
+    <div class="row">
+      <div class="col-sm-12 title">
+        {{ "Really long product title (check it)  " }}
+      </div>
     </div>
-    <div class="form-group col-md-6 col-md-offset-3 text-center">
-      <button class="btn btn-primary btn-lg">Search</button>
+
+    <div class="row">
+      <div class="col-sm-12 market-price">
+        <span class="strike-center">Rs. 6999</span> 10% OFF
+      </div>
     </div>
-  </form>
-</section>
-<hr>
-<section class="row">
-  <h1 class="text-center h2">Results</h1>
-  <section class="well col-md-6 col-md-offset-3">
-    <h1 class="h3 col-md-6 text-right" style="margin-top: 0"><a href="#">Baked Potato w/ Cheese</a></h1>
-    <div class="col-md-6">
-      <button class="btn btn-info">Edit</button>
-      <button class="btn btn-danger">Delete</button>
+    <div class="row bordered-bottom">
+      <div class="col-sm-12 star">
+        <div class="star-ratings-css">
+          <div class="star-ratings-css-top" style="width: {{54}}%">
+            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+          </div>
+          <div class="star-ratings-css-bottom">
+            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+          </div>
+        </div>
+      </div>
     </div>
-  </section>
-  <section class="well col-md-6 col-md-offset-3">
-    <h1 class="h3 col-md-6 text-right" style="margin-top: 0"><a href="#">Garlic Mashed Potatoes</a></h1>
-    <div class="col-md-6">
-      <button class="btn btn-info">Edit</button>
-      <button class="btn btn-danger">Delete</button>
+
+    <div class="row">
+      <div class="col-sm-12 selling-price">
+       <div class="btn-group">
+         <button type="button" class="btn btn-default">Rs. 12000</button>
+         <button type="button" class="btn btn-primary">Add to cart</button>
+        </div>
+      </div>
     </div>
-  </section>
-  <section class="well col-md-6 col-md-offset-3">
-    <h1 class="h3 col-md-6 text-right" style="margin-top: 0"><a href="#">Potatos Au Gratin</a></h1>
-    <div class="col-md-6">
-      <button class="btn btn-info">Edit</button>
-      <button class="btn btn-danger">Delete</button>
-    </div>
-  </section>
-</section>
+  </div>
+</div>
