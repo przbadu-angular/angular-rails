@@ -1,5 +1,5 @@
 
-<div class="row" ng-repeat="product in products">
+<div class="row">
   <div class="col-sm-12">
     <h2>Product Listing (original product image comming soon!)</h2>
   </div>
@@ -8,26 +8,26 @@
 <hr />
 
 <div class="row">
-  <div class="col-lg-3 col-md-4 col-sm-6 product-listing">
+  <div class="col-lg-3 col-md-4 col-sm-6 product-listing"  ng-repeat="product in products">
     <a href="#">
       <img src="/assets/6.jpg">
     </a>
 
     <div class="row">
       <div class="col-sm-12 title">
-        {{ "Really long product title (check it)  " }}
+        {{ product.name }}
       </div>
     </div>
 
     <div class="row">
       <div class="col-sm-12 market-price">
-        <span class="strike-center">Rs. 6999</span> 10% OFF
+        <span class="strike-center">{{ product.market_price | currency }}</span> {{ product.percentage_off }}% OFF ({{ product.reviews_count}} reviews)
       </div>
     </div>
     <div class="row bordered-bottom">
-      <div class="col-sm-12 star">
+      <div class="col-sm-6 star">
         <div class="star-ratings-css">
-          <div class="star-ratings-css-top" style="width: {{54}}%">
+          <div class="star-ratings-css-top" style="width: {{product.total_rating_in_percentage}}%">
             <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
           </div>
           <div class="star-ratings-css-bottom">
@@ -35,12 +35,17 @@
           </div>
         </div>
       </div>
+    <div class="col-sm-6">
+      <div class="rating-percentage" style="margin-top: 10px; font-size: 12px;">
+        ({{product.total_rating_in_percentage}}% rating)
+      </div>
+    </div>
     </div>
 
     <div class="row">
       <div class="col-sm-12 selling-price">
        <div class="btn-group">
-         <button type="button" class="btn btn-default">Rs. 12000</button>
+         <button type="button" class="btn btn-default">{{ product.selling_price | currency}}</button>
          <button type="button" class="btn btn-primary">Add to cart</button>
         </div>
       </div>

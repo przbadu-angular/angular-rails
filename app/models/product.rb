@@ -18,4 +18,15 @@ class Product < ActiveRecord::Base
 	def is_available
 		self.stock_qty > 0
 	end
+
+	def total_rating_in_percentage
+		total_stars 	= self.stars_count
+		total_ratings = self.stars.sum(:rating)
+
+		if total_stars > 0
+			return ((total_ratings.to_f/(total_stars * 5).to_f) * 100).round(2)
+		else
+			0
+		end
+	end
 end

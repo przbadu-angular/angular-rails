@@ -1,7 +1,8 @@
 collection @products
 
 attributes :id, :name, :market_price, :selling_price, :you_save, :percentage_off,
-		:stock_qty, :short_description, :long_description, :is_available,
+		:stock_qty, :short_description, :long_description, :is_available, 
+		:reviews_count, :stars_count, :total_rating_in_percentage,
 		:created_at, :updated_at
 
 node do |product|
