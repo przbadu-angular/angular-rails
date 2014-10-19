@@ -19,11 +19,11 @@ Review:
 	product_id:integer, title, review, name
 
 	Counter Cache:
-		
+		add_column products, :reviews_count, :integer, :default => 0
 
 
-Rating:
-	product_id:integer, star:integer
+Star:
+	product_id:integer, rating:integer
 
 	Counter Cache:
-
+		add_column products, :stars_count, :integer, :default => 0
