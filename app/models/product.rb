@@ -1,5 +1,9 @@
 class Product < ActiveRecord::Base
 
+	# ASSOCIATIONS
+	has_many	:reviews
+	has_many	:stars
+
 	# function used for displaying how much amount user can save on this product
 	def you_save
 		(self.market_price > self.selling_price) ? (self.market_price - self.selling_price) : 0

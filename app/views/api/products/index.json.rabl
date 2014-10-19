@@ -10,3 +10,12 @@ node do |product|
 		:last_updated_at 			=> time_ago_in_words(product.updated_at)
 	}
 end
+
+
+child :review do
+	attributes :id, :product_id :title, :review, :name, :created_at, :updated_at
+end
+
+child :star do
+	attributes :id, :product_id, :rating, :created_at, :updated_at
+end

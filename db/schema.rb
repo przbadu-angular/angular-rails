@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141019104508) do
+ActiveRecord::Schema.define(version: 20141019124012) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,7 +23,24 @@ ActiveRecord::Schema.define(version: 20141019104508) do
     t.integer  "stock_qty",         default: 0
     t.string   "short_description"
     t.text     "long_description"
-    t.boolean  "is_available",      default: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "reviews_count",     default: 0
+    t.integer  "stars_count",       default: 0
+  end
+
+  create_table "reviews", force: true do |t|
+    t.integer  "product_id"
+    t.string   "title"
+    t.text     "review"
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "stars", force: true do |t|
+    t.integer  "product_id"
+    t.integer  "rating"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
