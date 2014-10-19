@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   # get '*path' => 'homes#index'
 
   namespace :api do
-    resources :products
+    resources :products, :defaults => { :format => 'json' }
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
